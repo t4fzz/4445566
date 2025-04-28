@@ -6,6 +6,9 @@
   <title>4445566.xyz</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body, html {
       margin: 0;
       padding: 0;
@@ -44,7 +47,7 @@
     }
     #site {
       display: none;
-      padding: 50px;
+      padding: 50px 20px;
       text-align: center;
     }
     .card {
@@ -88,6 +91,17 @@
     }
     audio {
       display: none;
+    }
+
+    /* Responsividade para celular */
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+        margin: 10px auto;
+      }
+      #site {
+        padding: 30px 10px;
+      }
     }
   </style>
 </head>
