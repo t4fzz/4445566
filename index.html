@@ -10,7 +10,6 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       background: #000;
       color: #fff;
       font-family: Arial, sans-serif;
@@ -28,7 +27,7 @@
       opacity: 0.5;
       background: #000;
     }
-    #confirmacao, #site {
+    #confirmacao {
       position: relative;
       min-height: 100vh;
       display: flex;
@@ -36,8 +35,6 @@
       align-items: center;
       justify-content: center;
       z-index: 1;
-    }
-    #confirmacao {
       background: rgba(0, 0, 0, 0.85);
     }
     #confirmacao button {
@@ -58,12 +55,12 @@
     }
     #site {
       display: none;
-      text-align: center;
-      padding: 50px 20px;
+      position: relative;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      z-index: 1;
     }
     .cards-wrapper {
-      padding-top: 30px;
-      padding-bottom: 50px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -146,7 +143,7 @@
         margin: 10px auto;
       }
       #site {
-        padding: 30px 10px;
+        padding: 30px 10px 60px 10px;
       }
     }
   </style>
@@ -211,12 +208,8 @@
 <script>
 function entrar() {
   document.getElementById('confirmacao').style.display = 'none';
-  
   const site = document.getElementById('site');
   site.style.display = 'block';
-  site.style.minHeight = 'auto';
-  site.style.height = 'auto';
-
   const audio = document.getElementById('audio');
   audio.muted = false;
   audio.play();
@@ -224,9 +217,9 @@ function entrar() {
 
 // Bloquear teclas de inspeção
 document.onkeydown = function(e) {
-  if (e.keyCode == 123) return false; // F12
-  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false; // Ctrl+Shift+I ou J
-  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+  if (e.keyCode == 123) return false;
+  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false;
+  if (e.ctrlKey && e.keyCode == 85) return false;
 };
 </script>
 
