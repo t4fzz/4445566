@@ -2,49 +2,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>4445566.xyz</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    html { scroll-behavior:smooth; }
-    body,html { margin:0; padding:0; height:100%; background:#000; color:#fff; font-family:Arial,sans-serif; }
-    #confirmacao { position:fixed; top:0; left:0; right:0; bottom:0; background:#000; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999; }
-    #confirmacao button { background:transparent; border:2px solid #fff; color:#fff; padding:10px 20px; font-size:18px; cursor:pointer; border-radius:10px; margin:10px; transition:background 0.3s,color 0.3s; }
-    #confirmacao button:hover { background:#fff; color:#000; }
-    #site { display:none; padding:50px 20px; text-align:center; }
-    .card { background:#111; padding:20px; margin:20px; border-radius:15px; width:280px; box-shadow:0 4px 10px rgba(255,255,255,0.1); transition:transform 0.3s; display:inline-block; }
-    .card:hover { transform:scale(1.05); }
-    img { width:100px; height:100px; border-radius:50%; margin-bottom:15px; object-fit:cover; }
-    h2 { margin:10px 0 5px; }
-    p { font-size:14px; color:#aaa; }
-    .icons a { color:#fff; margin:10px; font-size:24px; text-decoration:none; }
-    .container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-    audio { display:none; }
-    @media (max-width:600px) {
-      .card { width:90%; margin:10px auto; }
-      #site { padding:30px 10px; }
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    #confirmacao {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: #000;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 9999;
+    }
+    #confirmacao button {
+      background: transparent; border: 2px solid #fff;
+      color: #fff; padding: 10px 20px; font-size: 18px;
+      cursor: pointer; border-radius: 10px; margin: 10px;
+      transition: background 0.3s, color 0.3s;
+    }
+    #confirmacao button:hover { background: #fff; color: #000; }
+    #site {
+      display: none; padding: 50px 20px; text-align: center;
+    }
+    .card {
+      background: #111;
+      padding: 20px; margin: 20px;
+      border-radius: 15px; width: 280px;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+      display: inline-block;
+    }
+    .card:hover { transform: scale(1.05); }
+    img.avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%; margin-bottom: 15px;
+      object-fit: cover;
+    }
+    h2 { margin: 10px 0 5px; }
+    .status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 16px;
+    }
+    .status-icon {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: gray;
+    }
+    p { font-size: 14px; color: #aaa; }
+    .icons a {
+      color: #fff; margin: 10px;
+      font-size: 24px; text-decoration: none;
+    }
+    .container {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 20px;
+    }
+    audio { display: none; }
+    @media (max-width: 600px) {
+      .card { width: 90%; margin: 10px auto; }
+      #site { padding: 30px 10px; }
     }
   </style>
 </head>
 <body oncontextmenu="return false;">
 
-<!-- Tela de confirmação -->
 <div id="confirmacao">
   <button onclick="entrar()">$</button>
 </div>
 
-<!-- Conteúdo principal -->
 <div id="site">
   <h1>4445566.xyz</h1>
-
   <audio id="audio" src="musica.mp3" autoplay muted loop></audio>
 
   <div class="container">
-    <div class="card">
-      <img src="tafz.png" alt="t4fz">
-      <h2>t4fz</h2>
-      <p>oi sou t4</p>
+    <div class="card" id="card-t4fz">
+      <img class="avatar" id="avatar-t4fz" src="" alt="t4fz">
+      <h2 id="nome-t4fz">t4fz</h2>
+      <div class="status">
+        <div class="status-icon" id="icon-t4fz"></div>
+        <span id="status-t4fz">Status: carregando...</span>
+      </div>
       <div class="icons">
         <a href="https://instagram.com/0llaw1" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://discord.com/users/385931079606992911" target="_blank"><i class="fab fa-discord"></i></a>
@@ -52,10 +100,13 @@
       </div>
     </div>
 
-    <div class="card">
-      <img src="chapado.png" alt="9">
-      <h2>9</h2>
-      <p>lambo penis</p>
+    <div class="card" id="card-9">
+      <img class="avatar" id="avatar-9" src="" alt="9">
+      <h2 id="nome-9">9</h2>
+      <div class="status">
+        <div class="status-icon" id="icon-9"></div>
+        <span id="status-9">Status: carregando...</span>
+      </div>
       <div class="icons">
         <a href="https://instagram.com/j.pedroozl" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://discord.com/users/1362523971479666800" target="_blank"><i class="fab fa-discord"></i></a>
@@ -63,10 +114,13 @@
       </div>
     </div>
 
-    <div class="card">
-      <img src="nezay.png" alt="nezay">
-      <h2>nezay</h2>
-      <p></p>
+    <div class="card" id="card-nezay">
+      <img class="avatar" id="avatar-nezay" src="" alt="nezay">
+      <h2 id="nome-nezay">nezay</h2>
+      <div class="status">
+        <div class="status-icon" id="icon-nezay"></div>
+        <span id="status-nezay">Status: carregando...</span>
+      </div>
       <div class="icons">
         <a href="https://discord.com/users/187902749113974785" target="_blank"><i class="fab fa-discord"></i></a>
         <a href="https://last.fm/user/nezaay" target="_blank"><i class="fab fa-lastfm"></i></a>
@@ -84,11 +138,41 @@ function entrar() {
   audio.play();
 }
 
-// Bloquear teclas de inspeção
+const users = {
+  "t4fz": "385931079606992911",
+  "nezay": "187902749113974785",
+  "9": "1362523971479666800"
+};
+
+function atualizarStatus() {
+  for (const [nome, id] of Object.entries(users)) {
+    fetch(`https://api.lanyard.rest/v1/users/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        const user = data.data.discord_user;
+        const status = data.data.discord_status;
+        const avatar = `https://cdn.discordapp.com/avatars/${id}/${user.avatar}.png`;
+
+        document.getElementById(`avatar-${nome}`).src = avatar;
+        document.getElementById(`nome-${nome}`).innerText = user.username;
+        document.getElementById(`status-${nome}`).innerText = status;
+
+        // mudar a cor do status-icon
+        const icon = document.getElementById(`icon-${nome}`);
+        if (status === "online") icon.style.background = "limegreen";
+        else if (status === "idle") icon.style.background = "gold";
+        else if (status === "dnd") icon.style.background = "red";
+        else icon.style.background = "gray"; // offline
+      });
+  }
+}
+
+atualizarStatus();
+setInterval(atualizarStatus, 10000);
+
+// Proteção de inspeção
 document.onkeydown = function(e) {
-  if (e.keyCode == 123) { return false; } // F12
-  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) { return false; } // Ctrl+Shift+I ou J
-  if (e.ctrlKey && e.keyCode == 85) { return false; } // Ctrl+U
+  if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
 };
 </script>
 
