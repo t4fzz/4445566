@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,18 +26,17 @@
       z-index: -1;
       opacity: 0.5;
     }
-    #confirmacao {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.85);
+    #confirmacao, #site {
+      position: relative;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      z-index: 10;
+      z-index: 1;
+    }
+    #confirmacao {
+      background: rgba(0, 0, 0, 0.85);
     }
     #confirmacao button {
       background: transparent;
@@ -58,37 +56,29 @@
     }
     #site {
       display: none;
-      padding: 50px 20px;
       text-align: center;
-      position: relative;
-      z-index: 1;
+      padding: 50px 20px;
     }
     .cards-wrapper {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: column;
+      padding-top: 30px;
       padding-bottom: 50px;
-      overflow: hidden;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .container {
       display: flex;
-      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
       margin-top: 30px;
-      animation: scroll 8s linear infinite;
-      width: max-content;
-    }
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
     }
     .card {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
-      padding: 30px;
+      padding: 20px;
+      margin: 20px;
       border-radius: 20px;
-      width: 350px;
+      width: 280px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
@@ -102,8 +92,8 @@
       border: 1px solid rgba(255, 255, 255, 0.4);
     }
     .card img {
-      width: 180px;
-      height: 180px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       margin-bottom: 15px;
       object-fit: cover;
@@ -111,10 +101,10 @@
     }
     h2 {
       margin: 10px 0 5px;
-      font-size: 28px;
+      font-size: 22px;
     }
     p {
-      font-size: 20px;
+      font-size: 15px;
       color: #bbb;
       margin-bottom: 15px;
     }
@@ -127,7 +117,7 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 10px;
       margin: 5px;
-      font-size: 24px;
+      font-size: 20px;
       border-radius: 50%;
       transition: background 0.3s, transform 0.3s;
       display: inline-flex;
@@ -139,7 +129,9 @@
       color: #000;
       transform: scale(1.2);
     }
-    audio { display: none; }
+    audio {
+      display: none;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -148,8 +140,6 @@
     }
     @media (max-width: 600px) {
       .card {
-        width: 100%;
-        padding: 40px;
         width: 90%;
         margin: 10px auto;
       }
@@ -162,12 +152,12 @@
 <body oncontextmenu="return false;">
 
 <video id="background-video" autoplay muted loop playsinline>
-  <source src="background.mp4" type="video/mp4">
+  <source src="https://files.catbox.moe/17gwni.mp4" type="video/mp4">
   Seu navegador não suporta vídeos HTML5.
 </video>
 
 <div id="confirmacao">
-  <button onclick="entrar()">Entrar</button>
+  <button onclick="entrar()">$</button>
 </div>
 
 <div id="site">
@@ -182,10 +172,10 @@
         <h2>t4fz</h2>
         <p>oi, sou t4</p>
         <div class="icons">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="https://instagram.com/0llaw1" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://discord.com/users/385931079606992911" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://last.fm/user/i6w" target="_blank"><i class="fab fa-lastfm"></i></a>
         </div>
-        <div id="status-t4fz" style="margin-top:10px;">Status: carregando...</div>
       </div>
 
       <div class="card">
@@ -193,10 +183,9 @@
         <h2>9</h2>
         <p>Y + P 💝</p>
         <div class="icons">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-lastfm"></i></a>
+          <a href="https://instagram.com/j.pedroozl" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://last.fm/user/joojjpedrooz" target="_blank"><i class="fab fa-lastfm"></i></a>
         </div>
-        <div id="status-9" style="margin-top:10px;">Status: carregando...</div>
       </div>
 
       <div class="card">
@@ -204,80 +193,34 @@
         <h2>nezay</h2>
         <p></p>
         <div class="icons">
-          <a href="#"><i class="fab fa-discord"></i></a>
-          <a href="#"><i class="fab fa-lastfm"></i></a>
+          <a href="https://discord.com/users/187902749113974785" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://last.fm/user/nezaay" target="_blank"><i class="fab fa-lastfm"></i></a>
         </div>
-        <div id="status-nezay" style="margin-top:10px;">Status: carregando...</div>
       </div>
     </div>
   </section>
 
   <footer>
     <p>site criado por t4fz</p>
-    <p>em construção...</p>
+    <p>site está em construção... tá meio podre ainda, mas em breve terá atualizações.</p>
   </footer>
 </div>
 
 <script>
 function entrar() {
   document.getElementById('confirmacao').style.display = 'none';
-  document.getElementById('site').style.display = 'block';
+  document.getElementById('site').style.display = 'flex';
   const audio = document.getElementById('audio');
   audio.muted = false;
   audio.play();
 }
 
+// Bloquear teclas de inspeção
 document.onkeydown = function(e) {
-  if (e.keyCode == 123) return false;
-  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false;
-  if (e.ctrlKey && e.keyCode == 85) return false;
+  if (e.keyCode == 123) return false; // F12
+  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false; // Ctrl+Shift+I ou J
+  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
 };
-
-// --- Status Discord ---
-async function fetchStatus(userId, elementId) {
-  try {
-    const res = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
-    const data = await res.json();
-    if (data.success) {
-      const status = data.data.discord_status;
-      let statusText = '';
-      switch (status) {
-        case 'online':
-          statusText = '🟢 Online';
-          break;
-        case 'idle':
-          statusText = '🟡 Ausente';
-          break;
-        case 'dnd':
-          statusText = '⛔ Não Perturbe';
-          break;
-        case 'offline':
-          statusText = '⚫ Offline';
-          break;
-        default:
-          statusText = '❓ Desconhecido';
-      }
-      document.getElementById(elementId).innerText = `Status: ${statusText}`;
-    } else {
-      document.getElementById(elementId).innerText = 'Status: erro ao buscar';
-    }
-  } catch (error) {
-    document.getElementById(elementId).innerText = 'Status: erro';
-  }
-}
-
-const users = [
-  { id: '385931079606992911', element: 'status-t4fz' },
-  { id: '1362523971479666800', element: 'status-9' },
-  { id: '187902749113974785', element: 'status-nezay' },
-];
-
-function updateAllStatus() {
-  users.forEach(user => fetchStatus(user.id, user.element));
-}
-
-updateAllStatus();
-setInterval(updateAllStatus, 15000);
 </script>
 
 </body>
