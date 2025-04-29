@@ -81,12 +81,8 @@
       width: max-content;
     }
     @keyframes scroll {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
     .card {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
@@ -143,9 +139,7 @@
       color: #000;
       transform: scale(1.2);
     }
-    audio {
-      display: none;
-    }
+    audio { display: none; }
     footer {
       text-align: center;
       padding: 20px;
@@ -191,7 +185,9 @@
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-discord"></i></a>
         </div>
+        <div id="status-t4fz" style="margin-top:10px;">Status: carregando...</div>
       </div>
+
       <div class="card">
         <img src="chapado.png" alt="9">
         <h2>9</h2>
@@ -200,7 +196,9 @@
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-lastfm"></i></a>
         </div>
+        <div id="status-9" style="margin-top:10px;">Status: carregando...</div>
       </div>
+
       <div class="card">
         <img src="nezay.png" alt="nezay">
         <h2>nezay</h2>
@@ -209,6 +207,7 @@
           <a href="#"><i class="fab fa-discord"></i></a>
           <a href="#"><i class="fab fa-lastfm"></i></a>
         </div>
+        <div id="status-nezay" style="margin-top:10px;">Status: carregando...</div>
       </div>
     </div>
   </section>
@@ -233,6 +232,52 @@ document.onkeydown = function(e) {
   if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false;
   if (e.ctrlKey && e.keyCode == 85) return false;
 };
+
+// --- Status Discord ---
+async function fetchStatus(userId, elementId) {
+  try {
+    const res = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+    const data = await res.json();
+    if (data.success) {
+      const status = data.data.discord_status;
+      let statusText = '';
+      switch (status) {
+        case 'online':
+          statusText = '🟢 Online';
+          break;
+        case 'idle':
+          statusText = '🟡 Ausente';
+          break;
+        case 'dnd':
+          statusText = '⛔ Não Perturbe';
+          break;
+        case 'offline':
+          statusText = '⚫ Offline';
+          break;
+        default:
+          statusText = '❓ Desconhecido';
+      }
+      document.getElementById(elementId).innerText = `Status: ${statusText}`;
+    } else {
+      document.getElementById(elementId).innerText = 'Status: erro ao buscar';
+    }
+  } catch (error) {
+    document.getElementById(elementId).innerText = 'Status: erro';
+  }
+}
+
+const users = [
+  { id: '385931079606992911', element: 'status-t4fz' },
+  { id: '1362523971479666800', element: 'status-9' },
+  { id: '187902749113974785', element: 'status-nezay' },
+];
+
+function updateAllStatus() {
+  users.forEach(user => fetchStatus(user.id, user.element));
+}
+
+updateAllStatus();
+setInterval(updateAllStatus, 15000);
 </script>
 
 </body>
