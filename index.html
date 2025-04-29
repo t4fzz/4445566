@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -138,13 +139,34 @@
       font-size: 14px;
       color: #888;
     }
+    /* Ajustes para Mobile */ 
     @media (max-width: 600px) {
       .card {
-        width: 90%;
-        margin: 10px auto;
+        width: 95%;
+        margin: 15px 0;
+        padding: 25px 15px;
+      }
+      .container {
+        flex-direction: column;
+        align-items: center;
       }
       #site {
-        padding: 30px 10px;
+        padding: 20px 10px;
+      }
+      .card img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .icons a {
+        padding: 8px;
+        font-size: 18px;
       }
     }
   </style>
@@ -215,11 +237,10 @@ function entrar() {
   audio.play();
 }
 
-// Bloquear teclas de inspeção
 document.onkeydown = function(e) {
-  if (e.keyCode == 123) return false; // F12
-  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false; // Ctrl+Shift+I ou J
-  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+  if (e.keyCode == 123) return false;
+  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false;
+  if (e.ctrlKey && e.keyCode == 85) return false;
 };
 </script>
 
