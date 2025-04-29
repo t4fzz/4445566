@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -66,22 +67,30 @@
       min-height: 80vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       flex-direction: column;
       padding-bottom: 50px;
+      overflow: hidden;
+      position: relative;
     }
     .container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
       gap: 20px;
       margin-top: 30px;
+      animation: scroll 5s linear infinite;
+      width: max-content;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
     .card {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
       padding: 20px;
-      margin: 20px;
       border-radius: 20px;
       width: 280px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -162,7 +171,7 @@
 </video>
 
 <div id="confirmacao">
-  <button onclick="entrar()">$</button>
+  <button onclick="entrar()">Entrar</button>
 </div>
 
 <div id="site">
@@ -177,29 +186,26 @@
         <h2>t4fz</h2>
         <p>oi, sou t4</p>
         <div class="icons">
-          <a href="https://instagram.com/0llaw1" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://discord.com/users/385931079606992911" target="_blank"><i class="fab fa-discord"></i></a>
-          <a href="https://last.fm/user/i6w" target="_blank"><i class="fab fa-lastfm"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
         </div>
       </div>
-
       <div class="card">
         <img src="chapado.png" alt="9">
         <h2>9</h2>
         <p>Y + P 💝</p>
         <div class="icons">
-          <a href="https://instagram.com/j.pedroozl" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://last.fm/user/joojjpedrooz" target="_blank"><i class="fab fa-lastfm"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-lastfm"></i></a>
         </div>
       </div>
-
       <div class="card">
         <img src="nezay.png" alt="nezay">
         <h2>nezay</h2>
-        <p></p>
+        <p>em construção</p>
         <div class="icons">
-          <a href="https://discord.com/users/187902749113974785" target="_blank"><i class="fab fa-discord"></i></a>
-          <a href="https://last.fm/user/nezaay" target="_blank"><i class="fab fa-lastfm"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+          <a href="#"><i class="fab fa-lastfm"></i></a>
         </div>
       </div>
     </div>
@@ -207,7 +213,7 @@
 
   <footer>
     <p>site criado por t4fz</p>
-    <p>site está em construção... tá meio podre ainda, mas em breve terá atualizações.</p>
+    <p>em construção...</p>
   </footer>
 </div>
 
@@ -220,11 +226,10 @@ function entrar() {
   audio.play();
 }
 
-// Bloquear teclas de inspeção
 document.onkeydown = function(e) {
-  if (e.keyCode == 123) return false; // F12
-  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false; // Ctrl+Shift+I ou J
-  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+  if (e.keyCode == 123) return false;
+  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false;
+  if (e.ctrlKey && e.keyCode == 85) return false;
 };
 </script>
 
