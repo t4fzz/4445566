@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,7 +10,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
+      min-height: 100%;
       background: #000;
       color: #fff;
       font-family: Arial, sans-serif;
@@ -219,11 +220,9 @@ function entrar() {
   audio.play();
 }
 
-// Bloquear teclas de inspeção
+// Proteção básica
 document.onkeydown = function(e) {
-  if (e.keyCode == 123) return false; // F12
-  if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) return false; // Ctrl+Shift+I ou J
-  if (e.ctrlKey && e.keyCode == 85) return false; // Ctrl+U
+  if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
 };
 </script>
 
