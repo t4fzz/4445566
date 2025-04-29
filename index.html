@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -25,6 +26,7 @@
       object-fit: cover;
       z-index: -1;
       opacity: 0.5;
+      background: #000;
     }
     #confirmacao, #site {
       position: relative;
@@ -209,7 +211,7 @@
 <script>
 function entrar() {
   document.getElementById('confirmacao').style.display = 'none';
-  document.getElementById('site').style.display = 'flex';
+  document.getElementById('site').style.display = 'block';
   const audio = document.getElementById('audio');
   audio.muted = false;
   audio.play();
