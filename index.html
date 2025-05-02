@@ -60,11 +60,15 @@
     }
     #site {
       display: none;
+      flex-direction: column;
       text-align: center;
+      padding: 30px 20px 50px;
+      align-items: center;
+text-align: center;
       padding: 50px 20px;
     }
     .cards-wrapper {
-      padding-top: 30px;
+      padding-top: 10px;
       padding-bottom: 50px;
       display: flex;
       flex-direction: column;
@@ -155,7 +159,10 @@
 
     /* MOBILE AJUSTADO */
     @media (max-width: 600px) {
-      .card {
+      .cards-wrapper {
+        padding-top: 5px;
+      }
+.card {
       position: relative;
         width: 100;
         max-width: 400px;
